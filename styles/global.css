@@ -1,0 +1,74 @@
+:root {
+    --nes-gray: #7C7C7C;         /* Neutral Gray */
+    --nes-dark-blue: #0000FC;    /* Dark Blue */
+    --nes-medium-blue: #0000BC;  /* Medium Blue */
+    --nes-purple-blue: #4428BC;  /* Purple-Blue */
+    --nes-dark-purple: #940084;  /* Dark Purple */
+    --nes-magenta: #A80020;      /* Magenta */
+    --nes-red: #A81000;          /* Red */
+    --nes-brown-red: #881400;    /* Brownish Red */
+    --nes-brown: #503000;        /* Brown */
+    --nes-green: #007800;        /* Green */
+    --nes-dark-green: #006800;   /* Dark Green */
+    --nes-darker-green: #005800; /* Even Darker Green */
+    --nes-teal: #004058;         /* Teal */
+    --nes-black: #000000;        /* Black */
+  
+    --nes-light-gray: #BCBCBC;   /* Light Gray */
+    --nes-bright-blue: #0078F8;  /* Bright Blue */
+    --nes-sky-blue: #0058F8;     /* Sky Blue */
+    --nes-light-purple: #6844FC; /* Light Purple */
+    --nes-pink: #D800CC;         /* Pink */
+    --nes-bright-red: #E40058;   /* Bright Red */
+    --nes-orange-red: #F83800;   /* Orange-Red */
+    --nes-orange: #E45C10;       /* Orange */
+    --nes-gold: #AC7C00;         /* Gold */
+    --nes-bright-green: #00B800; /* Bright Green */
+    --nes-sea-green: #00A800;    /* Sea Green */
+    --nes-aqua: #00A844;         /* Aqua */
+    --nes-cyan: #008888;         /* Cyan */
+  
+    --nes-white: #F8F8F8;        /* White */
+    --nes-light-blue: #3CBCFC;   /* Light Blue */
+    --nes-soft-blue: #6888FC;    /* Soft Blue */
+    --nes-lilac: #9878F8;        /* Lilac */
+    --nes-light-pink: #F878F8;   /* Light Pink */
+    --nes-rose: #F85898;         /* Rose */
+    --nes-salmon: #F87858;       /* Salmon */
+    --nes-light-orange: #FCA044; /* Light Orange */
+    --nes-yellow: #F8B800;       /* Yellow */
+    --nes-lime-green: #B8F818;   /* Lime Green */
+    --nes-mint-green: #58D854;   /* Mint Green */
+    --nes-light-aqua: #58F898;   /* Light Aqua */
+    --nes-bright-cyan: #00E8D8;  /* Bright Cyan */
+    --nes-medium-gray: #787878;  /* Medium Gray */
+  
+    --nes-bright-white: #FCFCFC; /* Bright White */
+    --nes-pastel-blue: #A4E4FC;  /* Pastel Blue */
+    --nes-soft-lilac: #B8B8F8;   /* Soft Lilac */
+    --nes-light-lavender: #D8B8F8; /* Light Lavender */
+    --nes-pastel-pink: #F8B8F8;  /* Pastel Pink */
+    --nes-pale-rose: #F8A4C0;    /* Pale Rose */
+    --nes-cream: #F0D0B0;        /* Cream */
+    --nes-light-gold: #FCE0A8;   /* Light Gold */
+    --nes-pale-yellow: #F8D878;  /* Pale Yellow */
+    --nes-light-lime: #D8F878;   /* Light Lime */
+    --nes-soft-green: #B8F8B8;   /* Soft Green */
+    --nes-light-cyan: #B8F8D8;   /* Light Cyan */
+    --nes-bright-teal: #00FCFC;  /* Bright Teal */
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    background-color: var(--nes-soft-blue);
+    height: 50px;
+}
