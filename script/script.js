@@ -1,5 +1,7 @@
 let userInputMonster = "moblin";
-const inputField = document.querySelector('.info-text');
+const monsterName = document.querySelector('.monster-name');
+const monsterDescription = document.querySelector('.monster-description');
+const monsterLocations = document.querySelector('.monster-locations');
 
 const hruleURL =`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${userInputMonster}`;
 
@@ -13,7 +15,9 @@ const response = await fetch(hruleURL);
         locations: monster.data.common_locations
     };
     console.log(info);
-    inputField.textContent = info.monsterName;
+    monsterName.textContent = info.monsterName;
+    monsterDescription.textContent = info.description;
+    monsterLocations.textContent = info.locations;
 }
 
 getHruleMonster();
