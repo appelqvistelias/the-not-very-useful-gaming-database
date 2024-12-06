@@ -24,24 +24,30 @@ th {
     padding: 5px;
 }
 
-/* My NES styiling */
-
-.my-nes-select {
-    
+.get-help {
+    display: none;
+    height: 100vh;
+    width: 100vw;
 }
 
-.my-nes-section {
-
+.get-help-now {
+    font-size: 6.4rem;
 }
 
-.my-nes-label {
-
+@media (max-width: 500px) {
+    .inner-wrapper {
+        padding: 1rem 1rem;
+    }
 }
 
-.my-nes-input {
+@media (min-width: 4000px) {
+    .inner-wrapper {
+        display: none;
+    }
 
-}
-
-.my-nes-table {
-
+    .get-help {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
