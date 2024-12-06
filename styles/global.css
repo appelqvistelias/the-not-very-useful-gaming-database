@@ -67,8 +67,3 @@
 html {
     font-size: 62.5%;
 }
-
-header {
-    background-color: var(--nes-soft-blue);
-    height: 50px;
-}

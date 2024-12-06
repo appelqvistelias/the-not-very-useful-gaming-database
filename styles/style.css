@@ -1,4 +1,22 @@
-.container {
+header {
+    background-color: var(--nes-soft-blue);
+    height: 50px;
+}
+
+main {
     display: flex;
-    align-items: center;
+    justify-content: center;
+}
+
+.inner-wrapper {
+    padding: 1rem 5rem;
+}
+
+table, th {
+    border: 1px solid black;
+}
+
+th {
+    width: 20rem;
+    padding: 5px;
 }

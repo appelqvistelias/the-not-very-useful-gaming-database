@@ -6,12 +6,11 @@
 
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/style.css" />
-    <!-- minify -->
-    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
-    <!-- latest -->
-    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-    <!-- core style only -->
-    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+
+    <!-- NES styling -->
+     <!-- guide: https://nostalgic-css.github.io/NES.css/ -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
     <title>The Strum Gaming Database</title>
 </head>
@@ -26,15 +25,32 @@
 
     <main>
         <div class="inner-wrapper">
-            <div class="container">
-                <p>Monster: </p><p class="monster-name"></p>
-            </div>
-            <div class="container">
-                <p>Description: </p><p class="monster-description"></p>
-            </div>
-            <div class="container">
-                <p>Locations: </p><p class="monster-locations"></p>
-            </div>
+            <div class="nes-container">
+                <div class="nes-field">
+                    <label for="search">What monster do you wish to find?</label>
+                    <input type="text" id="search" class="search-field nes-input" placeholder="Monster name">
+                </div> <!-- .nes-field -->
+                <button type="button" class="search-btn nes-btn is-primary">Search</button>
+            </div> <!-- .nes-container -->
+
+            <div class="nes-table-responsive">
+                <table class="nes-table is-bordered is-centered">
+                  <thead>
+                    <tr>
+                      <th>Monster</th>
+                      <th>Location</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><p class="monster-name"></p></td>
+                      <td><p class="monster-locations"></p></td>
+                      <td><p class="monster-description"></p></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div> <!-- .nes-table-responsive -->
         </div> <!-- .inner-wrapper -->
     </main>
 
