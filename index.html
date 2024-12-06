@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/typography.css" />
     <link rel="stylesheet" href="styles/style.css" />
 
     <!-- NES styling -->
-     <!-- guide: https://nostalgic-css.github.io/NES.css/ -->
+    <!-- guide: https://nostalgic-css.github.io/NES.css/ -->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
@@ -16,15 +17,18 @@
 </head>
 <body>
     <header>
-        <div id="banner"></div>
 
-        <nav>
-            <a>The World of Hrule</a>
-        </nav>
     </header>
-
+    
     <main>
         <div class="inner-wrapper">
+            <div class="nes-select">
+                <select required id="default_select">
+                <option value="" disabled selected hidden>Select game...</option>
+                <option value="0">Zelda: Breath of the Wild</option>
+                <option value="1">Pokémon</option>
+                </select>
+            </div> <!-- nes-select -->
             <div class="nes-container">
                 <div class="nes-field">
                     <label for="search-input">What monster do you wish to find?</label>
@@ -35,20 +39,22 @@
 
             <div class="nes-table-responsive">
                 <table class="nes-table is-bordered is-centered">
-                  <thead>
-                    <tr>
-                      <th>Monster</th>
-                      <th>Location</th>
-                      <th>Loot</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
                   <tbody>
                     <tr>
-                      <td><p class="monster-name"></p></td>
-                      <td><p class="monster-locations"></p></td>
-                      <td><p class="monster-loot"></p></td>
-                      <td><p class="monster-description"></p></td>
+                        <th>Monster</th>
+                        <td><p class="monster-name"></p></td>
+                    </tr>
+                    <tr>
+                        <th>Locations</th>
+                        <td><p class="monster-locations"></p></td>
+                    </tr>
+                    <tr>
+                        <th>Loot</th>
+                        <td><p class="monster-loot"></p></td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td><p class="monster-description"></p></td>
                     </tr>
                   </tbody>
                 </table>
