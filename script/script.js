@@ -1,3 +1,12 @@
+function htmlspecialchars(input) {
+    return input
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 const searchField = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 
@@ -26,15 +35,15 @@ const getHruleMonster = async (userSearchValue) => {
 
     console.log(info);
 
-    monsterName.textContent = info.monsterName;
-    monsterDescription.textContent = info.description;
-    monsterLocations.textContent = info.locations;
+    monsterName.textContent = htmlspecialchars(info.monsterName);
+    monsterDescription.textContent = htmlspecialchars(info.description);
+    monsterLocations.textContent = htmlspecialchars(info.locations);
 
-    } catch {
+    } catch (error) {
         console.error('Something went wrong', error);
-        monsterName.textContent = 'Error';
-        monsterDescription.textContent = 'Error';
-        monsterLocations.textContent = 'Error';
+        monsterName.textContent = 'Could not fetch monster data';
+        monsterDescription.textContent = 'Could not fetch monster description';
+        monsterLocations.textContent = 'Could not fetch monster locations';
     }
 };
 
