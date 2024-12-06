@@ -59,3 +59,9 @@ searchButton.addEventListener('click', () => {
         alert('You need to name a monster!');
     }
 });
+
+searchField.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        searchButton.click();
+    }
+});
