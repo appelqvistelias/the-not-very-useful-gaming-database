@@ -1,1 +1,1 @@
-A newbies Hrule Database
+A small project designed to learn how to use API data in a web environment. This repository features a search engine that retrieves information about items, animals, and monsters from The Legend of Zelda: Breath of the Wild.
