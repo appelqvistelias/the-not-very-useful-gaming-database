@@ -1,3 +1,7 @@
+function reloadPage() {
+    location.reload();
+}
+
 function toTitleCase(str) {
     return str
         .toLowerCase()
@@ -59,7 +63,7 @@ searchButton.addEventListener('click', async () => {
     const userSearchValue = searchField.value.trim();
     if (userSearchValue) {
         const sanitizedSearchValue = encodeURIComponent(userSearchValue.toLowerCase());
-        
+
         // fetch from api
         const data = await fetchMonsterFromAPI(sanitizedSearchValue);
 

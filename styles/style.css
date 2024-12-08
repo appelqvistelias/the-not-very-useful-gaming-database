@@ -132,6 +132,7 @@ table {
 th, td {
     padding: 1rem;
     text-align: left;
+    line-height: 1.5;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
 }
