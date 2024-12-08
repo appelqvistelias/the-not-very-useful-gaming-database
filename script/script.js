@@ -12,12 +12,12 @@ function toTitleCase(str) {
 
 const searchField = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
+const randButton = document.getElementById('random-button');
 
 const inputName = document.querySelector('.input-name');
 const inputLocations = document.querySelector('.input-locations');
 const inputLoot = document.querySelector('.input-loot');
 const inputDescription = document.querySelector('.input-description');
-
 
 const fetchInputFromAPI = async (userSearchValue) => {
     const hruleURL =`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${userSearchValue}`;
@@ -82,3 +82,11 @@ searchField.addEventListener('keydown', (e) => {
         searchButton.click();
     }
 });
+
+randButton.addEventListener('click', async () => {
+    let randomSearchResult = Math.floor(Math.random() * 389) + 1;
+
+    const data = await fetchInputFromAPI(randomSearchResult);
+    const input = inputToObj(data);
+    addInputToDom(input);
+})
