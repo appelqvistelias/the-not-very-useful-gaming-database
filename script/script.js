@@ -14,6 +14,7 @@ const searchField = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const randButton = document.getElementById('random-button');
 
+const inputCategory = document.querySelector('.input-category');
 const inputName = document.querySelector('.input-name');
 const inputLocations = document.querySelector('.input-locations');
 const inputLoot = document.querySelector('.input-loot');
@@ -31,10 +32,12 @@ const fetchInputFromAPI = async (userSearchValue) => {
 
     const input = await response.json();
 
+    console.log(input);
     return input;
     
 } catch (error) {
     console.error('Something went wrong', error);
+    inputCategory.textContent = 'Could not fetch input category';
     inputName.textContent = 'Could not fetch input name';
     inputLocations.textContent = 'Could not fetch input locations';
     inputLoot.textContent = 'Could not fetch input loot';
@@ -44,15 +47,17 @@ const fetchInputFromAPI = async (userSearchValue) => {
 
 const inputToObj = (input) => {
     const info = {
-        inputName: toTitleCase(input.data.name) || 'Unknown input name!',
-        locations: (input.data.common_locations || []).join(', ') || 'No locations found!',
-        loot: (input.data.drops || []).map(toTitleCase).join(', ') || 'No loot found!',
-        description: input.data.description || 'No description data available!'
+        category: toTitleCase(input.data.category) || 'Not found!',
+        inputName: toTitleCase(input.data.name) || 'Not found!',
+        locations: (input.data.common_locations || []).join(', ') || 'Not found!',
+        loot: (input.data.drops || []).map(toTitleCase).join(', ') || 'Not found!',
+        description: input.data.description || 'Not found!'
     };
     return info;
 }
 
 const addInputToDom = (input) => {
+    inputCategory.textContent = input.category;
     inputName.textContent = input.inputName;
     inputLocations.textContent = input.locations;
     inputLoot.textContent = input.loot;
@@ -73,7 +78,7 @@ searchButton.addEventListener('click', async () => {
         // obj -> add dom
         addInputToDom(input);
     } else {
-        alert('You need to name a monster, animal, item or ID!');
+        alert('You need to submit a monster, animal, item or ID!');
     }
 });
 
