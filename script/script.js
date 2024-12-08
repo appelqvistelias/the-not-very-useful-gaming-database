@@ -1,5 +1,5 @@
 function reloadPage() {
-    location.reload();
+    location.reload();  
 }
 
 function toTitleCase(str) {
@@ -13,50 +13,50 @@ function toTitleCase(str) {
 const searchField = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 
-const monsterName = document.querySelector('.monster-name');
-const monsterLocations = document.querySelector('.monster-locations');
-const monsterLoot = document.querySelector('.monster-loot');
-const monsterDescription = document.querySelector('.monster-description');
+const inputName = document.querySelector('.input-name');
+const inputLocations = document.querySelector('.input-locations');
+const inputLoot = document.querySelector('.input-loot');
+const inputDescription = document.querySelector('.input-description');
 
 
-const fetchMonsterFromAPI = async (userSearchValue) => {
+const fetchInputFromAPI = async (userSearchValue) => {
     const hruleURL =`https://botw-compendium.herokuapp.com/api/v3/compendium/entry/${userSearchValue}`;
     
     try {
         const response = await fetch(hruleURL);
 
         if (!response.ok) {
-            throw new Error('Failed to fetch monster data');
+            throw new Error('Failed to fetch input data');
         }
 
-    const monster = await response.json();
+    const input = await response.json();
 
-    return monster;
+    return input;
     
 } catch (error) {
     console.error('Something went wrong', error);
-    monsterName.textContent = 'Could not fetch monster data';
-    monsterLocations.textContent = 'Could not fetch monster locations';
-    monsterLoot.textContent = 'Could not fetch monster loot';
-    monsterDescription.textContent = 'Could not fetch monster description';
+    inputName.textContent = 'Could not fetch input name';
+    inputLocations.textContent = 'Could not fetch input locations';
+    inputLoot.textContent = 'Could not fetch input loot';
+    inputDescription.textContent = 'Could not fetch input description';
 }
 };
 
-const monsterToObj = (monster) => {
+const inputToObj = (input) => {
     const info = {
-        monsterName: toTitleCase(monster.data.name) || 'Unknown monster name!',
-        locations: (monster.data.common_locations || []).join(', ') || 'No locations found!',
-        loot: (monster.data.drops || []).map(toTitleCase).join(', ') || 'No loot found!',
-        description: monster.data.description || 'No description data available!'
+        inputName: toTitleCase(input.data.name) || 'Unknown input name!',
+        locations: (input.data.common_locations || []).join(', ') || 'No locations found!',
+        loot: (input.data.drops || []).map(toTitleCase).join(', ') || 'No loot found!',
+        description: input.data.description || 'No description data available!'
     };
     return info;
 }
 
-const addMonsterToDom = (monster) => {
-    monsterName.textContent = monster.monsterName;
-    monsterLocations.textContent = monster.locations;
-    monsterLoot.textContent = monster.loot;
-    monsterDescription.textContent = monster.description;
+const addInputToDom = (input) => {
+    inputName.textContent = input.inputName;
+    inputLocations.textContent = input.locations;
+    inputLoot.textContent = input.loot;
+    inputDescription.textContent = input.description;
 }
 
 searchButton.addEventListener('click', async () => {
@@ -65,15 +65,15 @@ searchButton.addEventListener('click', async () => {
         const sanitizedSearchValue = encodeURIComponent(userSearchValue.toLowerCase());
 
         // fetch from api
-        const data = await fetchMonsterFromAPI(sanitizedSearchValue);
+        const data = await fetchInputFromAPI(sanitizedSearchValue);
 
         // data -> obj
-        const monster = monsterToObj(data);
+        const input = inputToObj(data);
         
         // obj -> add dom
-        addMonsterToDom(monster);
+        addInputToDom(input);
     } else {
-        alert('You need to name a monster!');
+        alert('You need to name a monster, animal, item or ID!');
     }
 });
 
