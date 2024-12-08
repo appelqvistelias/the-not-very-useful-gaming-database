@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="styles/typography.css" />
     <link rel="stylesheet" href="styles/style.css" />
 
-    <!-- NES styling -->
-    <!-- guide: https://nostalgic-css.github.io/NES.css/ -->
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
     <title>The Strum Gaming Database</title>
 </head>
@@ -22,20 +19,15 @@
 
     <main>
         <div class="inner-wrapper">
-            <div class="nes-select">
-                <select required id="default_select">
-                <option value="" disabled selected hidden>Select game...</option>
-                <option value="0">Zelda: Breath of the Wild</option>
-                <option value="1">Pokémon</option>
-                </select>
-            </div> <!-- nes-select -->
-            <div class="nes-container">
-                <div class="nes-field">
+            <div class="search-container">
+                <div>
                     <label for="search-input">What monster do you wish to find?</label>
                     <input type="text" id="search-input" class="search-field nes-input" placeholder="Monster name">
-                </div> <!-- .nes-field -->
-                <button type="button" id="search-button" class="nes-btn is-primary">Search</button>
-            </div> <!-- .nes-container -->
+                </div>
+                <button type="button" id="search-button" class="eight-bit-btn btn-primary">Search</button>
+                <button type="button" id="clear-button" class="eight-bit-btn btn-clear">Clear</button>
+                <button type="button" id="random-button" class="eight-bit-btn btn-random">Random</button>
+            </div> <!-- .search-container -->
 
             <div class="nes-table-responsive">
                 <table class="nes-table is-bordered is-centered">
@@ -60,14 +52,10 @@
                 </table>
             </div> <!-- .nes-table-responsive -->
         </div> <!-- .inner-wrapper -->
-
-        <div class="get-help">
-            <p class="get-help-now">SÖK HJÄLP!</p>
-        </div>
     </main>
 
     <footer>
-
+    
     </footer>
 
     <script src="script/script.js"></script>

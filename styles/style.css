@@ -15,6 +15,11 @@ main {
     padding: 1rem 5rem;
 }
 
+.search-container {
+    border: 3px solid black;
+    padding: 2rem;
+}
+
 table, th {
     border: 1px solid black;
 }
@@ -24,30 +29,87 @@ th {
     padding: 5px;
 }
 
-.get-help {
-    display: none;
-    height: 100vh;
-    width: 100vw;
+.eight-bit-btn {
+    position: relative;
+    padding: 1rem 2rem;
+    font-family: "Press Start 2P", system-ui;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.get-help-now {
-    font-size: 6.4rem;
+.eight-bit-btn:hover {
+    cursor: pointer;
+}
+
+
+.eight-bit-btn::after, .eight-bit-btn::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: black;
+}
+
+.eight-bit-btn::after {
+    left: -2.5%;
+    top: 0;
+    width: 105%;
+    height: 100%;
+}
+
+.eight-bit-btn::before {
+    left: 0;
+    top: -7%;
+    width: 100%;
+    height: 115%;
+}
+
+.btn-primary {
+    background-color: var(--primary-btn-background);
+    box-shadow: inset -3px -3px 0px 0px var(--primary-btn-shadow);
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+    background-color: var(--primary-btn-hover);
+    box-shadow: inset -5px -5px 0px 0px var(--primary-btn-shadow);
+}
+
+.btn-primary:active {
+    box-shadow: inset 3px 3px 0px 0px var(--primary-btn-shadow);
+}
+
+.btn-clear {
+    background-color: var(--clear-btn-background);
+    box-shadow: inset -3px -3px 0px 0px var(--clear-btn-shadow);
+}
+
+.btn-clear:hover {
+    cursor: pointer;
+    background-color: var(--clear-btn-hover);
+    box-shadow: inset -5px -5px 0px 0px var(--clear-btn-shadow);
+}
+
+.btn-clear:active {
+    box-shadow: inset 3px 3px 0px 0px var(--clear-btn-shadow);
+}
+
+.btn-random {
+    background-color: var(--random-btn-background);
+    box-shadow: inset -3px -3px 0px 0px var(--random-btn-shadow);
+}
+
+.btn-random:hover {
+    cursor: pointer;
+    background-color: var(--random-btn-hover);
+    box-shadow: inset -5px -5px 0px 0px var(--random-btn-shadow);
+}
+
+.btn-random:active {
+    box-shadow: inset 3px 3px 0px 0px var(--random-btn-shadow);
 }
 
 @media (max-width: 500px) {
     .inner-wrapper {
         padding: 1rem 1rem;
-    }
-}
-
-@media (min-width: 4000px) {
-    .inner-wrapper {
-        display: none;
-    }
-
-    .get-help {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
