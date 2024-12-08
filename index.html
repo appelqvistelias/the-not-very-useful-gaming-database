@@ -21,11 +21,13 @@
         <div class="inner-wrapper">
             <h1>The Not Very Useful Gaming Database</h1>
             <div class="search-container">
-                <label for="search-input">What monster do you wish to find?</label>
+                <label for="search-input" class="search-label">What monster do you wish to find?</label>
                 <input type="text" id="search-input" class="search-field" placeholder="Monster name">
-                <button type="button" id="search-button" class="eight-bit-btn btn-primary">Search</button>
-                <button type="button" id="random-button" class="eight-bit-btn btn-random">Random</button>
-                <button type="button" id="clear-button" class="eight-bit-btn btn-clear">Clear</button>
+                <div class="button-container">
+                    <button type="button" id="search-button" class="eight-bit-btn btn-primary">Search</button>
+                    <button type="button" id="random-button" class="eight-bit-btn btn-random">Random</button>
+                    <button type="button" id="clear-button" class="eight-bit-btn btn-clear">Clear</button>
+                </div> <!-- .button-container -->
             </div> <!-- .search-container -->
 
             <div class="info-table">
@@ -33,19 +35,19 @@
                   <tbody>
                     <tr>
                         <th>Monster</th>
-                        <td><p class="monster-name"></p></td>
+                        <td><p class="monster-name">Please enter</p></td>
                     </tr>
                     <tr>
                         <th>Locations</th>
-                        <td><p class="monster-locations"></p></td>
+                        <td><p class="monster-locations">monster name</p></td>
                     </tr>
                     <tr>
                         <th>Loot</th>
-                        <td><p class="monster-loot"></p></td>
+                        <td><p class="monster-loot"></p>in the search field</td>
                     </tr>
                     <tr>
                         <th>Description</th>
-                        <td><p class="monster-description"></p></td>
+                        <td><p class="monster-description">above</p></td>
                     </tr>
                   </tbody>
                 </table>
@@ -54,7 +56,9 @@
     </main>
 
     <footer>
-    
+        <div class="inner-wrapper">
+            <p>&copy 2024 The Not Very Useful Gaming Database</p>
+        </div>
     </footer>
 
     <script src="script/script.js"></script>

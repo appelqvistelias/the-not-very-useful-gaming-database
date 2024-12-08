@@ -15,22 +15,29 @@ main {
     padding: 2rem;
 }
 
+.search-label {
+    font-size: 1.4rem;
+}
+
 .search-field {
     font-family: "Press Start 2P", system-ui;
     display: block;
     margin: 1rem 0;
-    padding: 0.5rem;
+    padding: 1rem;
     width: 100%;
     border: 2px solid black;
 }
 
-table, th {
-    border: 1px solid black;
+.search-field:focus {
+    outline: none;
+    border-color: var(--primary-btn-background);
+    border-radius: 0;
 }
 
-th {
-    width: 20rem;
-    padding: 5px;
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .eight-bit-btn {
@@ -112,8 +119,30 @@ th {
     box-shadow: inset 3px 3px 0px 0px var(--random-btn-shadow);
 }
 
+.info-table {
+    width: 100%;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 500px) {
     .inner-wrapper {
-        padding: 1rem 1rem;
+        padding: 0.5rem 0.5rem;
     }
 }
