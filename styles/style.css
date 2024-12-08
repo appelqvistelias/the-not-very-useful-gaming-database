@@ -1,3 +1,8 @@
+body {
+    background-color: var(--retro-white);
+    color: var(--retro-black);
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -11,7 +16,7 @@ main {
 }
 
 .search-container {
-    border: 3px solid black;
+    border: 3px solid var(--retro-black);
     padding: 2rem;
 }
 
@@ -20,12 +25,13 @@ main {
 }
 
 .search-field {
+    background-color: var(--retro-white-soft);
     font-family: "Press Start 2P", system-ui;
     display: block;
     margin: 1rem 0;
     padding: 1rem;
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid var(--retro-black);
 }
 
 .search-field:focus {
@@ -44,6 +50,7 @@ main {
     position: relative;
     padding: 1rem 2rem;
     font-family: "Press Start 2P", system-ui;
+    color: var(--retro-black);
     border: none;
     -webkit-tap-highlight-color: transparent;
 }
@@ -57,7 +64,7 @@ main {
     content: '';
     position: absolute;
     z-index: -1;
-    background-color: black;
+    background-color: var(--retro-black);
 }
 
 .eight-bit-btn::after {
@@ -121,7 +128,7 @@ main {
 
 .info-table {
     width: 100%;
-    border: 3px solid black;
+    border: 3px solid var(--retro-black);
     border-collapse: collapse;
 }
 
@@ -133,8 +140,8 @@ th, td {
     padding: 1rem;
     text-align: left;
     line-height: 1.5;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-bottom: 2px solid var(--retro-black);
+    border-right: 2px solid var(--retro-black);
 }
 
 footer {
@@ -145,5 +152,37 @@ footer {
 @media (max-width: 500px) {
     .inner-wrapper {
         padding: 0.5rem 0.5rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--retro-black);
+        color: var(--retro-white);
+    }
+
+    .search-container {
+        border: 3px solid var(--retro-white);
+    }
+
+    .search-field {
+        border: 2px solid var(--retro-white);
+    }
+
+    .eight-bit-btn {
+        color: var(--button-text-gray);
+    }
+
+    .eight-bit-btn::after, .eight-bit-btn::before {
+        background-color: var(--button-edge-gray);
+    }
+
+    .info-table {
+        border: 3px solid var(--retro-white);
+    }
+
+    th, td {
+        border-bottom: 2px solid var(--retro-white);
+        border-right: 2px solid var(--retro-white);
     }
 }
